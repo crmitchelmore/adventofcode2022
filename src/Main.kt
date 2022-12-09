@@ -6,6 +6,7 @@ import day4.Day4
 import day5.Day5
 import day6.Day6
 import day7.Day7
+import day9.Day9
 
 //import screstle.BestWord
 
@@ -13,6 +14,6 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        println("Day 8: ${Day8().result1()}")
+        println("Day 9: ${Day9().result1()}")
     }
 }
