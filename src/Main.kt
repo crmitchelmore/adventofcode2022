@@ -1,5 +1,6 @@
 import Day8.Day8
 import day1.Day1
+import day10.Day10
 import day2.Day2
 import day3.Day3
 import day4.Day4
@@ -14,6 +15,6 @@ object Main {
     @JvmStatic
     fun main(args: Array<String>) {
 
-        println("Day 9: ${Day9().result1()}")
+        println("Day 10: ${Day10().result1()}")
     }
 }
