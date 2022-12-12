@@ -8,9 +8,13 @@ import java.util.*
 // Import this class to handle errors
 // Import the Scanner class to read text files
 object ReadFile {
-    fun named(name: String?): List<String> {
+    fun named(name: String?, blocks: String? = null): List<String> {
         val text = File(name).readText()
-
+        if (blocks != null) {
+            return text.split(blocks)
+        }
         return text.split("\n")
     }
+
+
 }
