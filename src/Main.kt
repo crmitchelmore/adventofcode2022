@@ -1,11 +1,9 @@
-import day11.Day11
-import day12.Day12
-import day13.Day13
-import day14.Day14
+import day16.Day16
+import day17.Day17
 
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        Day14().result1()
+        Day16().result1()
     }
 }
