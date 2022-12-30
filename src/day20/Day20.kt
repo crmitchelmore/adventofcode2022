@@ -14,19 +14,14 @@ class Day20 {
     )
 
     class Number {
-        val id: Int
         val value: Long
-        override fun toString(): String {
-            return "$value"
-        }
-        constructor(value: Long, id: Int) {
+        constructor(value: Long) {
             this.value = value
-            this.id = id
         }
     }
     val rlines = ReadFile.named("src/day20/input.txt")
     var id = 0
-    val lines = rlines.map { Number(it.toLong() * 811589153, id++) }
+    val lines = rlines.map { Number(it.toLong() * 811589153) }
 
     fun result1() {
         var result = lines.toMutableList()
@@ -35,18 +30,16 @@ class Day20 {
             for (n in lines) {
                 val i = result.indexOf(n)
                 result.remove(n)
-                val pos = (size * 811589153 * 5 + i + n.value)
-                if (pos == size) {
+                val positivePosition = (size * 811589153 * 5 + i + n.value)
+                if (positivePosition == size) {
                     result.add(n)
                 } else {
-                    result.add((pos % size).toInt(), n)
+                    result.add((positivePosition % size).toInt(), n)
                 }
             }
         }
         val i0 = result.indexOfFirst { it.value == 0L }
-        val a = result[(1000 + i0) % result.size].value
-        val b = result[(2000 + i0) % result.size].value
-        val c = result[(3000 + i0) % result.size].value
-        println(a+b+c)
+        val output = (1..3).fold(0L) { acc, i -> acc + result[(i0 + i * 1000) % result.size].value }
+        println(output)
     }
 }
